@@ -1,4 +1,4 @@
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   const users = [
@@ -67,8 +67,7 @@ export async function GET(request: NextRequest) {
     projectLink: "https://github.com/your-username/portfolio-site",
   }
 ];
-  return new Response(JSON.stringify(users), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
+  return NextResponse.json((users), {
+    status: 200
   });
 }
