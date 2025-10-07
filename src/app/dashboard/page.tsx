@@ -3,9 +3,6 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import CardDisplay from '@/components/card-display';
-import { env } from 'process';
-
-const API_URL = env.NEXT_PUBLIC_API_URL;
 
 export default function Dashboard() {
   const [data, setData] = useState<any | null>(null);
@@ -15,7 +12,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res: AxiosResponse<any> = await axios.get(`${API_URL}/api/dashboard`);
+        const res: AxiosResponse<any> = await axios.get(`/api/dashboard`);
         setData(res.data);
       } catch (err: any) {
         setError(err.message);
