@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import CardDisplay from '@/components/card-display';
+import { env } from 'process';
 
-const API_URL = process.env.API_URL || 'http://localhost:3000';
+const API_URL = env.API_URL || 'http://localhost:3000';
 
 export default function Dashboard() {
   const [data, setData] = useState<any | null>(null);
