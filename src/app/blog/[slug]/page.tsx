@@ -5,7 +5,7 @@ import dataJSON from '../../api/blog/data.json';
 
 interface PageProps {
   params: {
-    slug: string;
+    slug: Promise<string>;
   };
 }
 
