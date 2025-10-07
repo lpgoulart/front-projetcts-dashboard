@@ -1,45 +1,46 @@
-'use client'
+'use client';
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
+import axios, { AxiosResponse } from 'axios';
+import CardDisplay from '@/components/card-display';
 
-type User = {
-  id: number;
-  name: string;
-};
-
-export default async function DashboardPage() {
-
-  const [users, setUsers] = useState<User[]>([]);
+export default function Dashboard() {
+  const [data, setData] = useState<any | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchUsers() {
+    const fetchData = async () => {
       try {
-        const res = await axios.get('/api/dashboard');
-        setUsers(res.data);
-      } catch (error) {
-        console.error(error);
+        const res: AxiosResponse<any> = await axios.get('/api/dashboard');
+        setData(res.data);
+      } catch (err: any) {
+        setError(err.message);
       } finally {
         setLoading(false);
       }
-    }
+    };
+    fetchData();
+  }, []); 
 
-    fetchUsers();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.name}</li>
+    <main>
+      <div className="flex flex-wrap gap-6">
+        {data.map((project: any, index: any) => (
+          <CardDisplay
+            key={index}
+            imageSrc={project.imageSrc}
+            imageAlt={project.imageAlt}
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            projectLink={project.projectLink}
+          />
         ))}
-      </ul>
-    </div>
+      </div>
+    </main>
   );
 }
