@@ -5,19 +5,19 @@ import dataJSON from '../../api/blog/data.json';
 
 interface PageProps {
   params: {
-    slug: Promise<string>;
+    slug: string;
   };
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const posts: any[] = dataJSON.posts;
   return posts.map((post) => ({
     slug: post.id.toString(),
   }));
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
-  const { slug } = await params;
+export default function BlogPostPage({ params }: PageProps) {
+  const { slug } = params;
 
   const post = dataJSON.posts.find((p: any) => p.id.toString() === slug);
 
