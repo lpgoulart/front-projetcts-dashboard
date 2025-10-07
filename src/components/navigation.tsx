@@ -2,12 +2,10 @@ import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <>
-      <Link href={"/"}>Go to Home</Link>
-      <br />
-      <Link href={"/dashboard"}>Go to Dashboard</Link>
-      <br />
-      <Link href={"/dashboard/user"}>Go to User</Link>
-    </>
+    <div className="flex flex-col p-6 gap-3 border-r-2">
+      <Link href={"/"}>Home</Link>
+      <Link href={"/dashboard"}>Dashboard</Link>
+      <Link href={"/dashboard/user"}>User</Link>
+    </div>
   );
 }

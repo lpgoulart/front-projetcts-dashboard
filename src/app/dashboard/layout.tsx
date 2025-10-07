@@ -5,10 +5,8 @@ export default function DasboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

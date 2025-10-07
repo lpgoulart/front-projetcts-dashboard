@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import "./globals.css";
+import Header from "@/components/header";
 
 export default function RootLayout({
   children,
@@ -9,8 +10,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation />
-        {children}
+        <div className="flex gap-5">
+          <Navigation />
+          <div className="p-6 w-full">
+            <Header />
+            <br /><br />
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
