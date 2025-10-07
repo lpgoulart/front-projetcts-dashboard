@@ -1,7 +1,5 @@
-import Navigation from "@/components/navigation";
-import "./globals.css";
 
-export default function RootLayout({
+export default function DasboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -9,7 +7,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation />
         {children}
       </body>
     </html>
