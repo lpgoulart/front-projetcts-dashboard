@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
-import CardDisplay from '@/components/card-display';
+import CardDisplay from '@/components/dashboard/card-display';
 import dataJSON from '../api/dashboard/data.json';
 
 export default function Dashboard() {

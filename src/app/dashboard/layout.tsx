@@ -1,3 +1,5 @@
+import Header from "@/components/header";
+import Navigation from "@/components/navigation";
 
 export default function DasboardLayout({
   children,
@@ -6,7 +8,14 @@ export default function DasboardLayout({
 }>) {
   return (
     <>
-      {children}
+      <div className="flex gap-5">
+        <Navigation />
+        <div className="p-6 w-full">
+          <Header />
+          <br /><br />
+          {children}
+        </div>
+      </div>
     </>
   );
 }
