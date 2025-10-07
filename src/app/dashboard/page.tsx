@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import CardDisplay from '@/components/card-display';
+import dataJSON from '../api/dashboard/data.json';
 
 export default function Dashboard() {
   const [data, setData] = useState<any | null>(null);
@@ -10,17 +11,14 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res: AxiosResponse<any> = await axios.get(`/api/dashboard`);
-        setData(res.data);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
+    try {
+      const { projects } = dataJSON as any;
+      setData(projects);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   if (loading) return <p>Loading...</p>;
