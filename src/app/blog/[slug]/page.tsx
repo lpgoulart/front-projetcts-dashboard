@@ -1,7 +1,7 @@
 import Header from '@/components/blog/header';
-import dataJSON from '../../api/blog/data.json';
 import BackButton from '@/components/blog/back-button';
 import LikeButton from '@/components/blog/like-button';
+import dataJSON from '../../api/blog/data.json';
 
 interface PageProps {
   params: {
@@ -9,8 +9,16 @@ interface PageProps {
   };
 }
 
+export async function generateStaticParams() {
+  const posts: any[] = dataJSON.posts;
+  return posts.map((post) => ({
+    slug: post.id.toString(),
+  }));
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
+
   const post = dataJSON.posts.find((p: any) => p.id.toString() === slug);
 
   if (!post) {
