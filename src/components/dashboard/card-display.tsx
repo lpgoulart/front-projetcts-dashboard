@@ -1,3 +1,5 @@
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 interface ProjectCardProps {
   imageSrc: string;
   imageAlt: string;
@@ -49,9 +51,7 @@ export default function CardDisplay(
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link">
-                <path d="M15 3h6v6" /><path d="M10 14L21 3" /><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-              </svg>
+              <FaExternalLinkAlt />
             </a>
           </div>
 
