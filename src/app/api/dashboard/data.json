@@ -2,16 +2,17 @@
   "projects": [
     {
       "imageSrc": "https://images.unsplash.com/photo-1542831371-29b018445585?auto=format&fit=crop&q=80&w=400&h=400",
-      "imageAlt": "A code editor with a web development project",
-      "title": "AI Chatbot Interface",
-      "description": "A sleek, responsive chatbot UI built to integrate with various AI APIs, offering real-time conversation and customizable themes.",
+      "imageAlt": "A simple blog project",
+      "title": "Simple Blog Page",
+      "description": "A simple Next.js blog with a clean interface. It showcases core web dev concepts like data fetching and routing. A perfect starting point for learning.",
       "tags": [
         "React",
         "TypeScript",
-        "Tailwind CSS",
-        "Vercel"
+        "Tailwind",
+        "Next.js",
+        "UI/UX"
       ],
-      "projectLink": "https://github.com/your-username/ai-chatbot-ui"
+      "projectLink": "/blog"
     },
     {
       "imageSrc": "https://images.unsplash.com/photo-1509712792617-e43598f121d1?auto=format&fit=crop&q=80&w=400&h=400",
