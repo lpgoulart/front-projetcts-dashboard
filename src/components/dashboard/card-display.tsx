@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface ProjectCardProps {
@@ -46,13 +47,13 @@ export default function CardDisplay(
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">
               {title}
             </h3>
-            <a
+            <Link
               href={projectLink}
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
             >
               <FaExternalLinkAlt />
-            </a>
+            </Link>
           </div>
 
           {/* Project Description */}
