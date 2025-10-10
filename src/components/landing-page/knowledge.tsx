@@ -40,9 +40,7 @@ const technologies: Technology[] = [
 export default function Knowledge() {
   return (
     <section id="experience" className="bg-gray-100 py-20 px-4 relative overflow-hidden w-full">
-      <div className="absolute sm:w-[300px] transform skew-5 -rotate-5 bg-gray-800 h-[120%] lg:w-[600px] -top-3 -left-13"></div>
-      <div className="absolute sm:w-[300px] transform -skew-5 rotate-5 bg-gray-800 h-[120%] lg:w-[600px] -top-3 -right-13"></div>
-      <div className="container mx-auto text-center z-10 relative border border-gray-100 rounded-lg p-8 shadow-lg">
+      <div className="container mx-auto text-center z-10 relative">
         <h2 className="text-4xl font-bold text-gray-800 mb-6">Minhas Tecnologias</h2>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed mb-12">
           Minha experiência profissional me permitiu construir uma base sólida nas seguintes tecnologias, que utilizo diariamente para criar soluções eficientes e modernas.
